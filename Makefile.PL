@@ -17,6 +17,8 @@ license 'perl5';
 if ($Module::Install::AUTHOR) {
     system("maint/rebuild.pl")
         and die $!;
+    system("pod2text lib/Net/AMQP/PP.pm > README")
+        and die $!;
 }
 
 WriteAll;
