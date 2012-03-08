@@ -12,6 +12,8 @@ test_requires 'Test::More' => '0.88';
 
 author_requires 'AnyEvent::RabbitMQ';
 
+license 'perl5';
+
 if ($Module::Install::AUTHOR) {
     system("maint/rebuild.pl")
         and die $!;
