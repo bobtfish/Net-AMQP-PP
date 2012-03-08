@@ -32,4 +32,4 @@ while (my $line = <$in>) {
 }
 close($in);
 close($out);
-
+system("mv $fn.new $fn") and die $!;
