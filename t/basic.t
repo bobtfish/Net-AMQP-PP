@@ -5,10 +5,10 @@ use Test::More;
 use Test::Without::Module qw( XML::LibXML );
 
 use_ok("Net::AMQP::PP");
-my $data = Net::AMQP::Protocol->load_xml_spec();
-ok $data;
-use Data::Dumper;
-warn Dumper($data);
+eval { Net::AMQP::Protocol->load_xml_spec() };
+ok !$@;
+ok scalar keys %Net::AMQP::Protocol::spec;
+ok Net::AMQP::Protocol::Access::Request->can('class_id');
 
 done_testing;
 
